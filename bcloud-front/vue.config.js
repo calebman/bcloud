@@ -28,8 +28,8 @@ const assetsCDN = {
 
 // vue.config.js
 const vueConfig = {
-  outputDir: '../server/src/main/resources/front',
-  publicPath: process.env.BASE_URL,
+  outputDir: '../bcloud-server/src/main/resources/front',
+  publicPath: process.env.VUE_APP_PUBLIC_PATH,
   configureWebpack: {
     // webpack plugins
     plugins: [
@@ -88,15 +88,15 @@ const vueConfig = {
 
   devServer: {
     // development server port 8887
-    port: 8887,
+    port: 8887
     // If you want to turn on the proxy, please remove the mockjs /src/main.jsL11
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8888/',
-        ws: false,
-        changeOrigin: true
-      }
-    }
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://localhost:8888/',
+    //     ws: false,
+    //     changeOrigin: true
+    //   }
+    // }
   },
 
   // disable source map in production

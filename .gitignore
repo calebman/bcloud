@@ -1,6 +1,9 @@
 .DS_Store
 logs/
 target/
+dist/*
+!dist/bin
+!dist/config/.gitkeep
 
 ### STS ###
 .apt_generated
@@ -20,7 +23,6 @@ target/
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
-/dist/
 /nbdist/
 /.nb-gradle/
 build/

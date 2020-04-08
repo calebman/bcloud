@@ -1,6 +1,5 @@
 import client from 'webpack-theme-color-replacer/client'
 import generate from '@ant-design/colors/lib/generate'
-
 export default {
   getAntdSerials (color) {
     // 淡化（即less的tint）
@@ -16,7 +15,7 @@ export default {
     var options = {
       newColors: this.getAntdSerials(newColor), // new colors array, one-to-one corresponde with `matchColors`
       changeUrl (cssUrl) {
-        return `/${cssUrl}` // while router is not `hash` mode, it needs absolute path
+        return process.env.VUE_APP_PUBLIC_PATH + cssUrl // while router is not `hash` mode, it needs absolute path
       }
     }
     return client.changer.changeColor(options, Promise)

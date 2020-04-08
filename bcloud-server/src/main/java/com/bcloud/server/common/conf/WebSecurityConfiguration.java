@@ -35,6 +35,7 @@ public class WebSecurityConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/public/**").addResourceLocations("classpath:/front/");
         registry.addResourceHandler("/front/**").addResourceLocations("classpath:/front/");
     }
 
@@ -49,6 +50,7 @@ public class WebSecurityConfiguration implements WebMvcConfigurer {
             "/service/file/download/**",
             "/api/system/**",
             "/system/**",
+            "/public/**",
             "/front/**"
     };
 

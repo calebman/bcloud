@@ -10,15 +10,15 @@ import lombok.Getter;
 @Getter
 public enum FilterLogic {
     /**
-     * and logic
+     * logic and
      */
     AND,
     /**
-     * or logic
+     * logic or
      */
     OR,
     /**
-     * not logic
+     * logic not
      */
     NOR;
 }
