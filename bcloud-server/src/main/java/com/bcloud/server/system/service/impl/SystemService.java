@@ -3,6 +3,8 @@ package com.bcloud.server.system.service.impl;
 import com.bcloud.common.dao.system.IRoleEntityDao;
 import com.bcloud.common.entity.system.RoleEntity;
 import com.bcloud.common.file.IFileService;
+import com.bcloud.server.common.security.SessionUser;
+import com.bcloud.server.common.security.cache.IUserCacheStore;
 import com.bcloud.server.common.sys.CommonProvider;
 import com.bcloud.server.common.events.SystemConfigRemakeEvent;
 import com.bcloud.server.common.pojo.GlobalConstant;
@@ -13,6 +15,7 @@ import com.bcloud.server.common.sys.SystemFileConf;
 import com.bcloud.server.system.in.SystemConfRemakeDTO;
 import com.bcloud.server.system.service.ISystemService;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.context.*;
@@ -35,8 +38,14 @@ import java.util.stream.Stream;
 @Slf4j
 @Getter
 @Service
+@RequiredArgsConstructor
 public class SystemService extends CommonProvider implements ISystemService,
         ApplicationContextAware, ApplicationEventPublisherAware {
+
+    /**
+     * 用户缓存仓库
+     */
+    private final IUserCacheStore userCacheStore;
 
     /**
      * Spring容器上下文
@@ -50,9 +59,11 @@ public class SystemService extends CommonProvider implements ISystemService,
 
     @Override
     public void initSystem(SystemConfRemakeDTO confRemakeDTO) {
-        SystemDaoConf systemDaoConf = getDaoConfConverter().doBackward(confRemakeDTO);
+        SystemConfRemakeDTO.DaoConfConverter systemDaoConfConverter = createComponent(SystemConfRemakeDTO.DaoConfConverter.class);
+        SystemConfRemakeDTO.FileConfConverter systemFileConfConverter = createComponent(SystemConfRemakeDTO.FileConfConverter.class);
+        SystemDaoConf systemDaoConf = systemDaoConfConverter.doBackward(confRemakeDTO);
         systemDaoConf.test();
-        SystemFileConf systemFileConf = getFileConfConverter().doBackward(confRemakeDTO);
+        SystemFileConf systemFileConf = systemFileConfConverter.doBackward(confRemakeDTO);
         systemFileConf.test();
         SystemConfigRemakeEvent configRemakeEvent = new SystemConfigRemakeEvent(systemDaoConf, systemFileConf, getApplicationContext());
         eventPublisher.publishEvent(configRemakeEvent);
@@ -65,6 +76,15 @@ public class SystemService extends CommonProvider implements ISystemService,
     }
 
     @Override
+    public void logout(SessionUser user) {
+        if (user == null) {
+            return;
+        }
+        log.debug("User {} logout system", user.getAccount());
+        userCacheStore.unRegister(user.getToken());
+    }
+
+    @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
@@ -72,20 +92,6 @@ public class SystemService extends CommonProvider implements ISystemService,
     @Override
     public void setApplicationEventPublisher(ApplicationEventPublisher eventPublisher) {
         this.eventPublisher = eventPublisher;
-    }
-
-    /**
-     * 获取数据持久层的配置转换工具
-     */
-    private SystemConfRemakeDTO.DaoConfConverter getDaoConfConverter() {
-        return new SystemConfRemakeDTO.DaoConfConverter();
-    }
-
-    /**
-     * 获取文件持久层的配置转换工具
-     */
-    private SystemConfRemakeDTO.FileConfConverter getFileConfConverter() {
-        return new SystemConfRemakeDTO.FileConfConverter();
     }
 
     /**

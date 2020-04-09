@@ -5,6 +5,8 @@ import com.bcloud.server.common.security.SessionUser;
 import com.bcloud.server.system.in.UserLoginDTO;
 import com.bcloud.server.system.in.UserRegisterDTO;
 import com.bcloud.server.system.service.IUserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("users")
 @RequiredArgsConstructor
+@Tag(name = "UserController", description = "提供用户相关的接口信息")
 public class UserController {
 
     /**
@@ -29,6 +32,7 @@ public class UserController {
      * @return 响应体
      */
     @GetMapping("me")
+    @Operation(summary = "获取当前登录的用户信息")
     public BaseBody<SessionUser> getCurrentUser(SessionUser user) {
         return BaseBody.buildSuccess(user);
     }

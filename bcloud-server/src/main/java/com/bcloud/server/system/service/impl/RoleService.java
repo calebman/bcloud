@@ -28,11 +28,7 @@ public class RoleService extends CommonProvider implements IRoleService {
     public List<RoleVO> findByIds(Collection<String> roleIds) {
         Table<String, Pair<FilterLogic, FilterOperator>, Object> filters = HashBasedTable.create();
         filters.put("_id", Pair.of(FilterLogic.AND, FilterOperator.IN), roleIds);
-        RoleVO.VOConverter roleVOConverter = getRoleVOConverter();
+        RoleVO.VOConverter roleVOConverter = createComponent(RoleVO.VOConverter.class);
         return getRoleEntityDao().findAll(filters).stream().map(roleVOConverter::doBackward).collect(Collectors.toList());
-    }
-
-    public RoleVO.VOConverter getRoleVOConverter() {
-        return new RoleVO.VOConverter();
     }
 }

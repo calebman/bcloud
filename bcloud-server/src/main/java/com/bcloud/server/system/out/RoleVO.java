@@ -3,6 +3,7 @@ package com.bcloud.server.system.out;
 import com.bcloud.common.dao.IConverter;
 import com.bcloud.common.entity.BaseEntity;
 import com.bcloud.common.entity.system.RoleEntity;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
@@ -16,31 +17,22 @@ import java.util.Set;
  */
 @Getter
 @Setter
+@Schema(title = "系统角色信息")
 public class RoleVO extends BaseEntity {
 
-    /**
-     * 角色名称
-     */
+    @Schema(title = "角色名称")
     private String name;
 
-    /**
-     * 角色描述
-     */
+    @Schema(title = "角色描述")
     private String desc;
 
-    /**
-     * 角色当前的状态
-     */
+    @Schema(title = "角色当前的状态")
     private RoleEntity.Status status;
 
-    /**
-     * 拥有的菜单标志列表
-     */
+    @Schema(title = "拥有的菜单标志列表")
     private Set<String> menuKeys;
 
-    /**
-     * 拥有的资源标志列表
-     */
+    @Schema(title = "拥有的资源标志列表")
     private Set<String> resourceKeys;
 
     /**

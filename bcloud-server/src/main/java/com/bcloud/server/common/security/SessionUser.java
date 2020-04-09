@@ -7,6 +7,7 @@ import com.bcloud.common.file.IFileService;
 import com.bcloud.server.system.out.RoleVO;
 import com.bcloud.server.system.out.UserVO;
 import com.bcloud.server.system.service.IRoleService;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -26,19 +27,13 @@ import java.util.UUID;
 @Setter
 public class SessionUser extends UserVO {
 
-    /**
-     * 用户令牌信息
-     */
+    @Schema(title = "用户令牌信息")
     private String token;
 
-    /**
-     * 拥有的菜单标志列表
-     */
+    @Schema(title = "拥有的菜单标志列表")
     private Set<String> menuKeys;
 
-    /**
-     * 拥有的资源标志列表
-     */
+    @Schema(title = "拥有的资源标志列表")
     private Set<String> resourceKeys;
 
     /**

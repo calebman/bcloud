@@ -2,10 +2,13 @@ package com.bcloud.server.repo.in;
 
 import com.bcloud.common.dao.IConverter;
 import com.bcloud.common.entity.repo.DataRepoDictEntity;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 /**
@@ -15,21 +18,19 @@ import java.util.List;
  */
 @Getter
 @Setter
+@Schema(title = "字典集合传输实体")
 public class RepoDictDTO {
 
-    /**
-     * 字典集合名称
-     */
+    @NotBlank
+    @Schema(title = "字典集合名称", required = true)
     private String name;
 
-    /**
-     * 字典集合描述
-     */
+    @NotBlank
+    @Schema(title = "字典集合描述", required = true)
     private String desc;
 
-    /**
-     * 字典选项
-     */
+    @NotEmpty
+    @Schema(title = "字典选项", required = true)
     private List<String> items;
 
     /**

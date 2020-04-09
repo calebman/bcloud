@@ -10,6 +10,7 @@ import com.bcloud.common.entity.system.UserEntity;
 import com.bcloud.common.file.IFileService;
 import com.bcloud.server.system.out.UserVO;
 import com.bcloud.common.entity.BaseEntity;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
@@ -25,26 +26,19 @@ import java.util.stream.Collectors;
  */
 @Getter
 @Setter
+@Schema(title = "数据仓库")
 public class DataRepoVO extends BaseEntity {
 
-    /**
-     * 仓库名称
-     */
+    @Schema(title = "仓库名称")
     private String name;
 
-    /**
-     * 仓库描述
-     */
+    @Schema(title = "仓库描述")
     private String desc;
 
-    /**
-     * 仓库包含的列信息
-     */
+    @Schema(title = "仓库包含的列信息")
     private List<DataRepoColumnVO> columns;
 
-    /**
-     * 仓库归属用户
-     */
+    @Schema(title = "仓库归属用户")
     private UserVO belongUser;
 
     /**

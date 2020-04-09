@@ -11,6 +11,9 @@ import lombok.Getter;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 /**
  * @author JianhuiChen
@@ -21,12 +24,12 @@ import org.springframework.beans.factory.BeanFactoryAware;
  * @date 2020-03-30
  */
 @Getter
-public abstract class CommonProvider implements BeanFactoryAware {
+public abstract class CommonProvider implements ApplicationContextAware {
 
     /**
-     * Spring 实体仓库
+     * Spring上下文
      */
-    private BeanFactory beanFactory;
+    private ApplicationContext applicationContext;
 
     protected IFileService getFileService() {
         return loadComponent(IFileService.class);
@@ -57,6 +60,19 @@ public abstract class CommonProvider implements BeanFactoryAware {
     }
 
     /**
+     * 根据类型从Spring工厂中提取所需依赖创建组件
+     * 每次创建都是新的实体 不会缓存在Spring bean factory
+     *
+     * @param requiredType 组件类对象
+     * @param <T>          具体类型
+     * @return 组件实体
+     */
+    protected <T> T createComponent(Class<T> requiredType) {
+        AutowireCapableBeanFactory beanFactory = getApplicationContext().getAutowireCapableBeanFactory();
+        return beanFactory.createBean(requiredType);
+    }
+
+    /**
      * 根据类型从Spring实体工厂中加载最新的组件
      *
      * @param requiredType 组件类对象
@@ -65,11 +81,11 @@ public abstract class CommonProvider implements BeanFactoryAware {
      * @throws BeansException 加载时可能出现的异常
      */
     private <T> T loadComponent(Class<T> requiredType) throws BeansException {
-        return getBeanFactory().getBean(requiredType);
+        return getApplicationContext().getBean(requiredType);
     }
 
     @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        this.beanFactory = beanFactory;
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
     }
 }

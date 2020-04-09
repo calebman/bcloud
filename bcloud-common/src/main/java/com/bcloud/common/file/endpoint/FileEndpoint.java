@@ -2,6 +2,9 @@ package com.bcloud.common.file.endpoint;
 
 import com.bcloud.common.file.FileSaveResult;
 import com.bcloud.common.file.IFileService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +16,10 @@ import org.springframework.web.multipart.MultipartFile;
  * @description 文件服务端点
  * @date 2020-03-25
  */
-@RequestMapping("/service/file")
+@ResponseBody
 @RequiredArgsConstructor
+@RequestMapping("/service/file")
+@Tag(name = "FileController", description = "提供文件的上传、下载、删除等接口")
 public class FileEndpoint {
 
     /**
@@ -24,8 +29,8 @@ public class FileEndpoint {
      * @return 上传文件结果
      */
     @PostMapping
-    @ResponseBody
-    public ResponseEntity<FileSaveResult> uploadFile(@RequestParam("file") MultipartFile file) {
+    @Operation(summary = "上传文件")
+    public ResponseEntity<FileSaveResult> uploadFile(@RequestParam("file") @Parameter(description = "上传的文件信息", required = true) MultipartFile file) {
         return ResponseEntity.ok(getFileService().save(file));
     }
 
@@ -36,8 +41,9 @@ public class FileEndpoint {
      * @return 操作结果
      */
     @DeleteMapping("{key}")
-    @ResponseBody
-    public ResponseEntity deleteFile(@PathVariable(name = "key") String fileKey) {
+    @Operation(summary = "删除文件")
+    public ResponseEntity deleteFile(@PathVariable(name = "key")
+                                     @Parameter(description = "文件唯一标志", required = true) String fileKey) {
         getFileService().remove(fileKey);
         return ResponseEntity.ok().build();
     }
@@ -49,8 +55,9 @@ public class FileEndpoint {
      * @return 文件详细信息
      */
     @GetMapping("{key}")
-    @ResponseBody
-    public ResponseEntity<FileSaveResult> getFileInfo(@PathVariable(name = "key") String fileKey) {
+    @Operation(summary = "获取文件详细信息")
+    public ResponseEntity<FileSaveResult> getFileInfo(@PathVariable(name = "key")
+                                                      @Parameter(description = "文件唯一标志", required = true) String fileKey) {
         return ResponseEntity.ok(getFileService().get(fileKey));
     }
 
@@ -61,8 +68,9 @@ public class FileEndpoint {
      * @return 文件输出流
      */
     @GetMapping("/download/{key}")
-    @ResponseBody
-    public ResponseEntity downloadFile(@PathVariable(name = "key") String fileKey) {
+    @Operation(summary = "下载文件")
+    public ResponseEntity downloadFile(@PathVariable(name = "key")
+                                       @Parameter(description = "文件唯一标志", required = true) String fileKey) {
         return getFileService().download(fileKey);
     }
 

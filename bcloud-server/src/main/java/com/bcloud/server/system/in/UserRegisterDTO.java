@@ -4,6 +4,7 @@ import com.bcloud.common.dao.IConverter;
 import com.bcloud.common.entity.system.UserEntity;
 import com.bcloud.common.util.RandomUtils;
 import com.bcloud.server.common.security.encoder.PasswordEncoder;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -22,33 +23,26 @@ import java.util.Set;
  */
 @Getter
 @Setter
+@Schema(title = "用户注册信息")
 public class UserRegisterDTO {
 
-    /**
-     * 账号
-     */
     @NotBlank
+    @Schema(title = "账号", required = true)
     @Pattern(regexp = "^[a-zA-z]\\w{3,15}$", message = "账号由字母、数字、下划线组成，字母开头，4-16位")
     private String account;
 
-    /**
-     * 邮箱
-     */
     @NotBlank
+    @Schema(title = "邮箱", required = true)
     @Pattern(regexp = "^([a-z0-9A-Z]+[-|.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$", message = "邮箱格式不合法")
     private String email;
 
-    /**
-     * 密码
-     */
     @NotBlank
+    @Schema(title = "密码", required = true)
     @Pattern(regexp = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,}$", message = "密码强度不够，至少8个字符且包含字母与数字")
     private String password;
 
-    /**
-     * 姓名
-     */
     @NotBlank
+    @Schema(title = "姓名", required = true)
     private String name;
 
     /**

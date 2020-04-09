@@ -3,6 +3,7 @@ package com.bcloud.server.repo.out;
 import com.bcloud.common.dao.IConverter;
 import com.bcloud.common.entity.BaseEntity;
 import com.bcloud.common.entity.repo.DataRepoDictEntity;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
@@ -16,26 +17,19 @@ import java.util.List;
  */
 @Getter
 @Setter
+@Schema(title = "数据仓库字典集合")
 public class RepoDictVO extends BaseEntity {
 
-    /**
-     * 字典集合名称
-     */
+    @Schema(title = "字典集合名称")
     private String name;
 
-    /**
-     * 字典集合描述
-     */
+    @Schema(title = "字典集合描述")
     private String desc;
 
-    /**
-     * 字典选项
-     */
+    @Schema(title = "字典选项")
     private List<String> items;
 
-    /**
-     * 所属数据仓库
-     */
+    @Schema(title = "所属数据仓库")
     private DataRepoVO belongRepo;
 
     /**

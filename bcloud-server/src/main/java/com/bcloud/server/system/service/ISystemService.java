@@ -1,5 +1,6 @@
 package com.bcloud.server.system.service;
 
+import com.bcloud.server.common.security.SessionUser;
 import com.bcloud.server.system.in.SystemConfRemakeDTO;
 
 /**
@@ -20,4 +21,11 @@ public interface ISystemService {
      * 初始化系统资源
      */
     void initResource();
+
+    /**
+     * 用户登出
+     *
+     * @param user 当前登录用户
+     */
+    void logout(SessionUser user);
 }

@@ -8,6 +8,7 @@ import com.bcloud.server.common.sys.local.LocalSystemFileConf;
 import com.bcloud.server.common.sys.mongo.MongoSystemDaoConf;
 import com.bcloud.server.common.sys.mongo.MongoSystemFileConf;
 import com.bcloud.server.common.valid.Options;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
@@ -28,30 +29,23 @@ import java.util.Set;
  */
 @Getter
 @Setter
+@Schema(title = "重置系统的配置信息")
 public class SystemConfRemakeDTO {
 
-    /**
-     * 数据持久层类型
-     */
+    @Schema(title = "数据持久层类型", required = true)
     @NotBlank(message = "数据持久层类型不可为空")
     @Options(message = "不合法的数据持久层类型", enumClass = SystemDaoConf.StorageType.class)
     private String daoStorageType;
 
-    /**
-     * 数据持久层配置
-     */
+    @Schema(title = "数据持久层配置")
     private Map<String, Object> daoStorageConf;
 
-    /**
-     * 文件持久层类型
-     */
+    @Schema(title = "文件持久层类型", required = true)
     @NotBlank(message = "文件持久层类型不可为空")
     @Options(message = "不合法的数据持久层类型", enumClass = SystemFileConf.StorageType.class)
     private String fileStorageType;
 
-    /**
-     * 文件持久层配置
-     */
+    @Schema(title = "文件持久层配置")
     private Map<String, Object> fileStorageConf;
 
     /**

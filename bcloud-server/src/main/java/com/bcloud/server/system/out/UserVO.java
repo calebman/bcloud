@@ -11,6 +11,7 @@ import com.bcloud.common.entity.system.UserEntity;
 import com.bcloud.server.system.service.IRoleService;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -29,41 +30,28 @@ import java.util.stream.Collectors;
  */
 @Getter
 @Setter
+@Schema(title = "系统用户信息")
 public class UserVO extends BaseEntity {
 
-    /**
-     * 账号
-     */
+    @Schema(title = "账号")
     private String account;
 
-    /**
-     * 邮箱
-     */
+    @Schema(title = "邮箱")
     private String email;
 
-    /**
-     * 姓名
-     */
+    @Schema(title = "姓名")
     private String name;
 
-    /**
-     * 用户当前的状态
-     */
+    @Schema(title = "用户当前的状态")
     private UserEntity.Status status;
 
-    /**
-     * 用户头像信息 外链地址
-     */
+    @Schema(title = "用户头像信息 外链地址")
     private String avatar;
 
-    /**
-     * 用户的角色列表
-     */
+    @Schema(title = "用户的角色列表")
     private List<RoleVO> roles;
 
-    /**
-     * 额外信息 如系统采用主题、样式等等
-     */
+    @Schema(title = "额外信息 如系统采用主题、样式等等")
     private Map<String, String> extraInfo;
 
     /**

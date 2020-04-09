@@ -1,6 +1,7 @@
 package com.bcloud.server.common.pojo;
 
 import com.alibaba.fastjson.JSONObject;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +18,7 @@ import java.io.Serializable;
 @Slf4j
 @Getter
 @Setter
+@Schema(title = "系统统一响应体")
 public class BaseBody<T> implements Serializable {
 
     /**
@@ -24,19 +26,13 @@ public class BaseBody<T> implements Serializable {
      */
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 错误编码
-     */
+    @Schema(title = "错误编码", description = "编码不为0时代表响应是错误的")
     private int code;
 
-    /**
-     * 错误信息
-     */
+    @Schema(title = "错误详细信息", description = "描述操作错误的详细信息")
     private String msg;
 
-    /**
-     * 数据
-     */
+    @Schema(title = "响应数据")
     private T data;
 
     private BaseBody() {

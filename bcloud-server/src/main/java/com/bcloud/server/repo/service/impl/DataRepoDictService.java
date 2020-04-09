@@ -24,18 +24,12 @@ import java.util.stream.Collectors;
 @Service
 public class DataRepoDictService extends CommonProvider implements IDataRepoDictService {
 
-    /**
-     * 字典集合 传输层实体转换类
-     */
-    private final RepoDictDTO.DTOConverter repoDictDTOConverter = new RepoDictDTO.DTOConverter();
-
-    /**
-     * 字典集合 视图层实体转换类
-     */
-    private final RepoDictVO.VOConverter repoDicrVOConverter = new RepoDictVO.VOConverter();
-
     @Override
     public RepoDictVO createDict(String belongRepo, RepoDictDTO repoDictDTO) {
+        // converter define
+        RepoDictVO.VOConverter repoDicrVOConverter = createComponent(RepoDictVO.VOConverter.class);
+        RepoDictDTO.DTOConverter repoDictDTOConverter = createComponent(RepoDictDTO.DTOConverter.class);
+        // create
         DataRepoDictEntity repoDictEntity = repoDictDTOConverter.doBackward(repoDictDTO);
         repoDictEntity.setBelongRepo(belongRepo);
         DataRepoDictEntity result = getDataRepoDictEntityDao().save(repoDictEntity);
@@ -44,7 +38,12 @@ public class DataRepoDictService extends CommonProvider implements IDataRepoDict
 
     @Override
     public RepoDictVO updateDict(String dictId, RepoDictDTO repoDictDTO) {
+        // check dict id
         this.checkDictExist(dictId);
+        // converter define
+        RepoDictVO.VOConverter repoDicrVOConverter = createComponent(RepoDictVO.VOConverter.class);
+        RepoDictDTO.DTOConverter repoDictDTOConverter = createComponent(RepoDictDTO.DTOConverter.class);
+        // update
         DataRepoDictEntity entity = getDataRepoDictEntityDao().findOne(dictId);
         DataRepoDictEntity repoDictEntity = repoDictDTOConverter.doBackward(repoDictDTO);
         BeanUtils.copyProperties(repoDictEntity, entity);
@@ -60,12 +59,17 @@ public class DataRepoDictService extends CommonProvider implements IDataRepoDict
 
     @Override
     public RepoDictVO getDictById(String dictId) {
+        // converter define
+        RepoDictVO.VOConverter repoDicrVOConverter = createComponent(RepoDictVO.VOConverter.class);
+        // find dict
         DataRepoDictEntity result = getDataRepoDictEntityDao().findOne(dictId);
         return repoDicrVOConverter.doBackward(result);
     }
 
     @Override
     public List<RepoDictVO> getDictsByRepo(String belongRepo) {
+        // converter define
+        RepoDictVO.VOConverter repoDicrVOConverter = createComponent(RepoDictVO.VOConverter.class);
         return getDataRepoDictEntityDao().findByRepo(belongRepo)
                 .stream()
                 .map(repoDicrVOConverter::doBackward)

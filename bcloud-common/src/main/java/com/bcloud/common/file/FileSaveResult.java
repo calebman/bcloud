@@ -1,5 +1,6 @@
 package com.bcloud.common.file;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
@@ -11,20 +12,15 @@ import lombok.extern.slf4j.Slf4j;
 @Getter
 @Setter
 @ToString
+@Schema(title = "文件操作结果")
 public class FileSaveResult {
 
-    /**
-     * 文件名称
-     */
+    @Schema(title = "文件名称")
     private String name;
 
-    /**
-     * 下载链接
-     */
+    @Schema(title = "下载链接")
     private String url;
 
-    /**
-     * 文件的唯一标志
-     */
+    @Schema(title = "文件的唯一标志")
     private String key;
 }

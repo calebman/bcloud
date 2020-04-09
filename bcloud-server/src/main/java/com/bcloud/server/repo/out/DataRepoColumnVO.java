@@ -8,6 +8,7 @@ import com.bcloud.common.entity.repo.DataRepoEntity;
 import com.bcloud.server.repo.in.RepoDictDTO;
 import com.bcloud.server.repo.service.IDataRepoDictService;
 import com.bcloud.common.entity.BaseEntity;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -20,31 +21,22 @@ import org.springframework.beans.BeanUtils;
  */
 @Getter
 @Setter
+@Schema(title = "数据仓库列")
 public class DataRepoColumnVO extends BaseEntity {
 
-    /**
-     * 列标志键
-     */
+    @Schema(title = "列标志键")
     private String key;
 
-    /**
-     * 列名称
-     */
+    @Schema(title = "列名称")
     private String name;
 
-    /**
-     * 列描述
-     */
+    @Schema(title = "列描述")
     private String desc;
 
-    /**
-     * 字典集合 如果类型 type = DICTIONARY
-     */
+    @Schema(title = "字典集合 如果类型 type = DICTIONARY")
     private RepoDictVO dictionary;
 
-    /**
-     * 列类型
-     */
+    @Schema(title = "列类型")
     private DataRepoColumnEntity.Type type;
 
     /**

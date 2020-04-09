@@ -1,5 +1,6 @@
 package com.bcloud.common.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,18 +20,12 @@ public class BaseEntity {
         this.updateAt = new Date();
     }
 
-    /**
-     * 唯一标志
-     */
+    @Schema(title = "唯一标志")
     private String id;
 
-    /**
-     * 创建时间
-     */
+    @Schema(title = "创建时间")
     private Date creatAt;
 
-    /**
-     * 更新时间
-     */
+    @Schema(title = "更新时间")
     private Date updateAt;
 }

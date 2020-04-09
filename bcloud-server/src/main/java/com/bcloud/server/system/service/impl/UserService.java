@@ -60,14 +60,16 @@ public class UserService extends CommonProvider implements IUserService {
             throw new AccessDeniedException("账号未被分配任何角色，暂时为不可用状态");
         }
         // 将数据库的用户实体 转换成 带权限的缓存用户
-        SessionUser sessionUser = getUserConverter().doBackward(userEntity);
+        SessionUser.UserConverter sessionUserConverter = createComponent(SessionUser.UserConverter.class);
+        SessionUser sessionUser = sessionUserConverter.doBackward(userEntity);
         userCacheStore.register(sessionUser);
         return sessionUser.getToken();
     }
 
     @Override
     public UserVO findById(String userId) {
-        return getUserVOConverter().doBackward(getUserEntityDao().findOne(userId));
+        UserVO.VOConverter userVoConverter = createComponent(UserVO.VOConverter.class);
+        return userVoConverter.doBackward(getUserEntityDao().findOne(userId));
     }
 
     @Override
@@ -80,19 +82,8 @@ public class UserService extends CommonProvider implements IUserService {
         if (getUserEntityDao().exists(filters)) {
             throw new RuntimeException("注册账户已存在");
         }
-        UserEntity userEntity = getRegisterDTOConverter().doBackward(registerDTO);
+        UserRegisterDTO.DTOConverter reigsterDtoConverter = createComponent(UserRegisterDTO.DTOConverter.class);
+        UserEntity userEntity = reigsterDtoConverter.doBackward(registerDTO);
         getUserEntityDao().save(userEntity);
-    }
-
-    private UserVO.VOConverter getUserVOConverter() {
-        return new UserVO.VOConverter(getFileService(), getRoleEntityDao());
-    }
-
-    private UserRegisterDTO.DTOConverter getRegisterDTOConverter() {
-        return new UserRegisterDTO.DTOConverter(getPasswordEncoder());
-    }
-
-    private SessionUser.UserConverter getUserConverter() {
-        return new SessionUser.UserConverter(getFileService(), getRoleEntityDao());
     }
 }

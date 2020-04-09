@@ -19,13 +19,10 @@ public class DataRepoColumnService extends CommonProvider implements IDataRepoCo
 
     @Override
     public List<DataRepoColumnVO> findByRepo(String repoId) {
+        DataRepoColumnVO.VOConverter dataRepoColumnVoConverter = createComponent(DataRepoColumnVO.VOConverter.class);
         return getDataRepoColumnEntityDao().findAll(Collections.singletonMap("belongRepo", repoId))
                 .stream()
-                .map(getDataRepoColumnVOConverter()::doBackward)
+                .map(dataRepoColumnVoConverter::doBackward)
                 .collect(Collectors.toList());
-    }
-
-    private DataRepoColumnVO.VOConverter getDataRepoColumnVOConverter() {
-        return new DataRepoColumnVO.VOConverter(getDataRepoDictEntityDao());
     }
 }

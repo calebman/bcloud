@@ -20,16 +20,12 @@ public class DataRepoService extends CommonProvider implements IDataRepoService 
         if (entity == null) {
             return null;
         }
-        return getDataRepoVOConverter().doBackward(entity);
+        DataRepoVO.VOConverter dataRepoVoConverter = createComponent(DataRepoVO.VOConverter.class);
+        return dataRepoVoConverter.doBackward(entity);
     }
 
     @Override
     public boolean checkRepoExist(String repoId) {
         return getDataRepoEntityDao().existsById(repoId);
-    }
-
-    private DataRepoVO.VOConverter getDataRepoVOConverter() {
-        return new DataRepoVO.VOConverter(getUserEntityDao(), getFileService(), getRoleEntityDao(),
-                getDataRepoDictEntityDao(), getDataRepoColumnEntityDao());
     }
 }

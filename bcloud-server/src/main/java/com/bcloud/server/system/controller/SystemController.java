@@ -1,11 +1,14 @@
 package com.bcloud.server.system.controller;
 
 import com.bcloud.server.common.pojo.BaseBody;
+import com.bcloud.server.common.security.SessionUser;
 import com.bcloud.server.system.in.SystemConfRemakeDTO;
 import com.bcloud.server.system.in.UserLoginDTO;
 import com.bcloud.server.system.in.UserRegisterDTO;
 import com.bcloud.server.system.service.ISystemService;
 import com.bcloud.server.system.service.IUserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
@@ -22,6 +25,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("system")
 @RequiredArgsConstructor
+@Tag(name = "SystemController", description = "提供用户登录登出注册等接口")
 public class SystemController {
 
     /**
@@ -41,6 +45,7 @@ public class SystemController {
      * @return 重置结果
      */
     @PostMapping("init")
+    @Operation(summary = "重置系统")
     public BaseBody initSystem(@RequestBody @Valid SystemConfRemakeDTO confRemakeDTO) {
         systemService.initSystem(confRemakeDTO);
         return BaseBody.buildSuccess();
@@ -53,6 +58,7 @@ public class SystemController {
      * @return 响应体 包含令牌
      */
     @PostMapping("login")
+    @Operation(summary = "用户登录")
     public BaseBody<String> login(@RequestBody @Valid UserLoginDTO loginDTO) {
         return BaseBody.buildSuccess(userService.login(loginDTO));
     }
@@ -64,8 +70,20 @@ public class SystemController {
      * @return 响应体
      */
     @PostMapping("register")
+    @Operation(summary = "用户注册")
     public BaseBody registerUser(@RequestBody @Valid UserRegisterDTO registerDTO) {
         userService.register(registerDTO);
         return BaseBody.buildSuccess();
+    }
+
+    /**
+     * 用户登出
+     *
+     * @param user 当前登录用户
+     */
+    @PostMapping("logout")
+    @Operation(summary = "用户登出")
+    public void logout(SessionUser user) {
+        systemService.logout(user);
     }
 }
