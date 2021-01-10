@@ -1,0 +1,67 @@
+[33m10:32:07.923[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+[33m10:32:07.960[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Finished Spring Data repository scanning in 27ms. Found 0 MongoDB repository interfaces.
+[33m10:32:08.210[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.c.a.ConfigurationClassEnhancer][0;39m-@Bean method SpringDocConfiguration.springdocBeanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+[33m10:32:08.515[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.w.e.tomcat.TomcatWebServer][0;39m-Tomcat initialized with port(s): 8888 (http)
+[33m10:32:08.525[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.coyote.http11.Http11NioProtocol][0;39m-Initializing ProtocolHandler ["http-nio-8888"]
+[33m10:32:08.526[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.catalina.core.StandardService][0;39m-Starting service [Tomcat]
+[33m10:32:08.527[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.catalina.core.StandardEngine][0;39m-Starting Servlet engine: [Apache Tomcat/9.0.31]
+[33m10:32:08.632[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.c.c.C.[.[localhost].[/bcloud]][0;39m-Initializing Spring embedded WebApplicationContext
+[33m10:32:08.633[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.web.context.ContextLoader][0;39m-Root WebApplicationContext: initialization completed in 1433 ms
+[33m10:32:09.117[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.s.c.ThreadPoolTaskExecutor][0;39m-Initializing ExecutorService 'applicationTaskExecutor'
+[33m10:32:09.830[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.coyote.http11.Http11NioProtocol][0;39m-Starting ProtocolHandler ["http-nio-8888"]
+[33m10:32:09.873[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.w.e.tomcat.TomcatWebServer][0;39m-Tomcat started on port(s): 8888 (http) with context path '/bcloud'
+[33m10:32:23.362[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.a.c.c.C.[.[localhost].[/bcloud]][0;39m-Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33m10:32:23.362[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.s.web.servlet.DispatcherServlet][0;39m-Initializing Servlet 'dispatcherServlet'
+[33m10:32:23.369[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.s.web.servlet.DispatcherServlet][0;39m-Completed initialization in 7 ms
+[33m10:32:28.349[0;39m [34m[http-nio-8888-exec-3][0;39m [34m[INFO ][0;39m [35m[o.s.api.AbstractOpenApiResource][0;39m-Init duration for springdoc-openapi is: 424 ms
+[33m12:02:18.059[0;39m [34m[SpringContextShutdownHook][0;39m [34m[INFO ][0;39m [35m[o.s.s.c.ThreadPoolTaskExecutor][0;39m-Shutting down ExecutorService 'applicationTaskExecutor'
+[33m13:33:13.465[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+[33m13:33:13.532[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Finished Spring Data repository scanning in 53ms. Found 0 MongoDB repository interfaces.
+[33m13:33:13.869[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.c.a.ConfigurationClassEnhancer][0;39m-@Bean method SpringDocConfiguration.springdocBeanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+[33m13:33:14.350[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.w.e.tomcat.TomcatWebServer][0;39m-Tomcat initialized with port(s): 8888 (http)
+[33m13:33:14.364[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.coyote.http11.Http11NioProtocol][0;39m-Initializing ProtocolHandler ["http-nio-8888"]
+[33m13:33:14.365[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.catalina.core.StandardService][0;39m-Starting service [Tomcat]
+[33m13:33:14.366[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.catalina.core.StandardEngine][0;39m-Starting Servlet engine: [Apache Tomcat/9.0.31]
+[33m13:33:14.485[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.c.c.C.[.[localhost].[/bcloud]][0;39m-Initializing Spring embedded WebApplicationContext
+[33m13:33:14.485[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.web.context.ContextLoader][0;39m-Root WebApplicationContext: initialization completed in 2109 ms
+[33m13:33:15.037[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.s.c.ThreadPoolTaskExecutor][0;39m-Initializing ExecutorService 'applicationTaskExecutor'
+[33m13:33:15.794[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.coyote.http11.Http11NioProtocol][0;39m-Starting ProtocolHandler ["http-nio-8888"]
+[33m13:33:15.838[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.w.e.tomcat.TomcatWebServer][0;39m-Tomcat started on port(s): 8888 (http) with context path '/bcloud'
+[33m13:33:31.625[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.a.c.c.C.[.[localhost].[/bcloud]][0;39m-Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33m13:33:31.625[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.s.web.servlet.DispatcherServlet][0;39m-Initializing Servlet 'dispatcherServlet'
+[33m13:33:31.635[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.s.web.servlet.DispatcherServlet][0;39m-Completed initialization in 10 ms
+[33m13:33:32.191[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.s.api.AbstractOpenApiResource][0;39m-Init duration for springdoc-openapi is: 501 ms
+[33m13:48:17.351[0;39m [34m[SpringContextShutdownHook][0;39m [34m[INFO ][0;39m [35m[o.s.s.c.ThreadPoolTaskExecutor][0;39m-Shutting down ExecutorService 'applicationTaskExecutor'
+[33m13:48:24.783[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+[33m13:48:24.822[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Finished Spring Data repository scanning in 29ms. Found 0 MongoDB repository interfaces.
+[33m13:48:25.035[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.c.a.ConfigurationClassEnhancer][0;39m-@Bean method SpringDocConfiguration.springdocBeanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+[33m13:48:25.253[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.w.e.tomcat.TomcatWebServer][0;39m-Tomcat initialized with port(s): 8888 (http)
+[33m13:48:25.270[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.coyote.http11.Http11NioProtocol][0;39m-Initializing ProtocolHandler ["http-nio-8888"]
+[33m13:48:25.271[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.catalina.core.StandardService][0;39m-Starting service [Tomcat]
+[33m13:48:25.271[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.catalina.core.StandardEngine][0;39m-Starting Servlet engine: [Apache Tomcat/9.0.31]
+[33m13:48:25.339[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.c.c.C.[.[localhost].[/bcloud]][0;39m-Initializing Spring embedded WebApplicationContext
+[33m13:48:25.339[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.web.context.ContextLoader][0;39m-Root WebApplicationContext: initialization completed in 1268 ms
+[33m13:48:25.736[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.s.c.ThreadPoolTaskExecutor][0;39m-Initializing ExecutorService 'applicationTaskExecutor'
+[33m13:48:26.427[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.coyote.http11.Http11NioProtocol][0;39m-Starting ProtocolHandler ["http-nio-8888"]
+[33m13:48:26.467[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.w.e.tomcat.TomcatWebServer][0;39m-Tomcat started on port(s): 8888 (http) with context path '/bcloud'
+[33m13:48:30.104[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.a.c.c.C.[.[localhost].[/bcloud]][0;39m-Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33m13:48:30.104[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.s.web.servlet.DispatcherServlet][0;39m-Initializing Servlet 'dispatcherServlet'
+[33m13:48:30.109[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.s.web.servlet.DispatcherServlet][0;39m-Completed initialization in 5 ms
+[33m13:48:30.548[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.s.api.AbstractOpenApiResource][0;39m-Init duration for springdoc-openapi is: 410 ms
+[33m21:59:25.003[0;39m [34m[SpringContextShutdownHook][0;39m [34m[INFO ][0;39m [35m[o.s.s.c.ThreadPoolTaskExecutor][0;39m-Shutting down ExecutorService 'applicationTaskExecutor'
+[33m21:59:33.775[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+[33m21:59:33.804[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Finished Spring Data repository scanning in 24ms. Found 0 MongoDB repository interfaces.
+[33m21:59:34.023[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.c.a.ConfigurationClassEnhancer][0;39m-@Bean method SpringDocConfiguration.springdocBeanFactoryPostProcessor is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+[33m21:59:34.282[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.w.e.tomcat.TomcatWebServer][0;39m-Tomcat initialized with port(s): 8888 (http)
+[33m21:59:34.293[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.coyote.http11.Http11NioProtocol][0;39m-Initializing ProtocolHandler ["http-nio-8888"]
+[33m21:59:34.294[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.catalina.core.StandardService][0;39m-Starting service [Tomcat]
+[33m21:59:34.295[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.catalina.core.StandardEngine][0;39m-Starting Servlet engine: [Apache Tomcat/9.0.31]
+[33m21:59:34.400[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.c.c.C.[.[localhost].[/bcloud]][0;39m-Initializing Spring embedded WebApplicationContext
+[33m21:59:34.401[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.web.context.ContextLoader][0;39m-Root WebApplicationContext: initialization completed in 1288 ms
+[33m21:59:34.954[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.s.c.ThreadPoolTaskExecutor][0;39m-Initializing ExecutorService 'applicationTaskExecutor'
+[33m21:59:35.755[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.coyote.http11.Http11NioProtocol][0;39m-Starting ProtocolHandler ["http-nio-8888"]
+[33m21:59:35.796[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.w.e.tomcat.TomcatWebServer][0;39m-Tomcat started on port(s): 8888 (http) with context path '/bcloud'
+[33m22:00:13.157[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.a.c.c.C.[.[localhost].[/bcloud]][0;39m-Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33m22:00:13.158[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.s.web.servlet.DispatcherServlet][0;39m-Initializing Servlet 'dispatcherServlet'
+[33m22:00:13.164[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.s.web.servlet.DispatcherServlet][0;39m-Completed initialization in 6 ms
+[33m22:00:13.616[0;39m [34m[http-nio-8888-exec-1][0;39m [34m[INFO ][0;39m [35m[o.s.api.AbstractOpenApiResource][0;39m-Init duration for springdoc-openapi is: 418 ms

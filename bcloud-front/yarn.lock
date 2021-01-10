@@ -1970,10 +1970,10 @@ ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-ant-design-vue@1.5.0-rc.6:
-  version "1.5.0-rc.6"
-  resolved "https://registry.yarnpkg.com/ant-design-vue/-/ant-design-vue-1.5.0-rc.6.tgz#a9616550e0386bf7a6b1bf00aae5cadc13159967"
-  integrity sha512-ILUyMCKa2oYAaymlWNlT2gVsNBugUCLZl28pUR+RAWjxYvxxqh6PCZj6hO9gRRgdz5WvwK1Z1gi5ua2JROOZfQ==
+ant-design-vue@1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/ant-design-vue/-/ant-design-vue-1.5.3.tgz#777a43a76dd233efc72abe9704103dbb2a95c558"
+  integrity sha512-wphTfLb5AzdUVSxgYr19BH9cPegZvaHBHayrIp8JVTYCnCpzu8R9Qzvdobflq7XkU1W/W8uep8uIElG5bdHa1Q==
   dependencies:
     "@ant-design/icons" "^2.1.1"
     "@ant-design/icons-vue" "^2.0.0"
@@ -2002,7 +2002,7 @@ ant-design-vue@1.5.0-rc.6:
     resize-observer-polyfill "^1.5.1"
     shallow-equal "^1.0.0"
     shallowequal "^1.0.2"
-    vue-ref "^1.0.4"
+    vue-ref "^2.0.0"
     warning "^4.0.0"
 
 any-promise@^1.0.0:
@@ -9817,6 +9817,11 @@ sort-keys@^1.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
+sortablejs@^1.10.1:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.10.2.tgz#6e40364d913f98b85a14f6678f92b5c1221f5290"
+  integrity sha512-YkPGufevysvfwn5rfdlGyrGjt7/CRHwvRPogD/lC+TnvcN29jDpCifKP+rBqf+LRldfXSTh+0CGLcSg0VIxq3A==
+
 source-list-map@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/source-list-map/-/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
@@ -10894,6 +10899,11 @@ vue-cropper@0.4.9:
   resolved "https://registry.npm.taobao.org/vue-cropper/download/vue-cropper-0.4.9.tgz#fe650f32516ecf29014bbd4a9079191c8dc5a5ae"
   integrity sha1-/mUPMlFuzykBS71KkHkZHI3Fpa4=
 
+vue-draggable-resizable@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vue-draggable-resizable/-/vue-draggable-resizable-2.1.0.tgz#b590212aef3c07d040aeceda784438068170fb08"
+  integrity sha512-DQe5JjiqPjndc3XZkkZAMVygMlJ4TLcpMWM78IkizHeJBfX5Ki6OKZPxrT+HE7w/12d+OfWom5Y5phYcrwCzqg==
+
 vue-eslint-parser@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-5.0.0.tgz#00f4e4da94ec974b821a26ff0ed0f7a78402b8a1"
@@ -10927,6 +10937,11 @@ vue-jest@^3.0.5:
     tsconfig "^7.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
+vue-json-pretty@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/vue-json-pretty/-/vue-json-pretty-1.6.3.tgz#c7f378f3c9f68977047de28197735bc2cf81b15b"
+  integrity sha512-dgb04fT9PMndfCI4RiQcqaV5P0hSg97LObm15Mkzjl2hL+qWJd833tOd2RhK/yk8AieZt8eJUac5NTZb31O6Mg==
+
 vue-loader@^15.7.0:
   version "15.7.0"
   resolved "https://registry.npmjs.org/vue-loader/-/vue-loader-15.7.0.tgz#27275aa5a3ef4958c5379c006dd1436ad04b25b3"
@@ -10951,10 +10966,10 @@ vue-quill-editor@^3.0.6:
     object-assign "^4.1.1"
     quill "^1.3.4"
 
-vue-ref@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/vue-ref/-/vue-ref-1.0.4.tgz#c27862b15a2720cff6b792566d824d1c3ac53320"
-  integrity sha512-DDyR/HlHeeNSkEi4Uj/F/7rER9ma0lnqqx8j9uEhdh0UyBWUCI1HJnX01OjTpLMB4F4TZHlK/6H2I6lqq3QC3Q==
+vue-ref@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vue-ref/-/vue-ref-2.0.0.tgz#483084d732abed11da796778a8266a3af0ea1a9c"
+  integrity sha512-uKNKpFOVeWNqS2mrBZqnpLyXJo5Q+vnkex6JvpENvhXHFNBW/SJTP8vJywLuVT3DpxwXcF9N0dyIiZ4/NpTexQ==
 
 vue-router@^3.1.2:
   version "3.1.3"
@@ -11011,6 +11026,18 @@ vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha1-pysaQqTYKnIepDjRtr9V5mGVxjc=
+
+vuedraggable@^2.23.2:
+  version "2.23.2"
+  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.23.2.tgz#0d95d7fdf4f02f56755a26b3c9dca5c7ca9cfa72"
+  integrity sha512-PgHCjUpxEAEZJq36ys49HfQmXglattf/7ofOzUrW2/rRdG7tu6fK84ir14t1jYv4kdXewTEa2ieKEAhhEMdwkQ==
+  dependencies:
+    sortablejs "^1.10.1"
+
+vuescroll@^4.15.0:
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/vuescroll/-/vuescroll-4.15.0.tgz#5f26f5cbc3d994771d89ce2be18f89f7391ab28b"
+  integrity sha512-BdAZlO0t54nkVL+iTDJu5ZyA8sL1UZymWHUOVGTacblXezilQGDDzYrYl//OH7wKOMqOMEL4lDqT4Swp5aOrQw==
 
 vuex@^3.1.1:
   version "3.1.1"

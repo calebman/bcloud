@@ -1,0 +1,109 @@
+[33m14:16:32.954[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+[33m14:16:32.989[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Finished Spring Data repository scanning in 28ms. Found 0 MongoDB repository interfaces.
+[33m14:16:33.317[0;39m [34m[main][0;39m [31m[WARN ][0;39m [35m[o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext][0;39m-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: ContextPath must start with '/' and not end with '/'
+[33m14:16:33.325[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.a.l.ConditionEvaluationReportLoggingListener][0;39m-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[33m14:16:33.335[0;39m [34m[main][0;39m [1;31m[ERROR][0;39m [35m[o.s.boot.SpringApplication][0;39m-Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: ContextPath must start with '/' and not end with '/'
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:156)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.bcloud.server.ServerApplication.main(ServerApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: ContextPath must start with '/' and not end with '/'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:210)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:179)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)
+	... 8 common frames omitted
+Caused by: java.lang.IllegalArgumentException: ContextPath must start with '/' and not end with '/'
+	at org.springframework.boot.web.servlet.server.AbstractServletWebServerFactory.checkContextPath(AbstractServletWebServerFactory.java:133)
+	at org.springframework.boot.web.servlet.server.AbstractServletWebServerFactory.setContextPath(AbstractServletWebServerFactory.java:122)
+	at org.springframework.boot.context.properties.PropertyMapper$Source.to(PropertyMapper.java:316)
+	at org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryCustomizer.customize(ServletWebServerFactoryCustomizer.java:54)
+	at org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryCustomizer.customize(ServletWebServerFactoryCustomizer.java:35)
+	at org.springframework.boot.web.server.WebServerFactoryCustomizerBeanPostProcessor.lambda$postProcessBeforeInitialization$0(WebServerFactoryCustomizerBeanPostProcessor.java:72)
+	at org.springframework.boot.util.LambdaSafe$Callbacks.lambda$null$0(LambdaSafe.java:287)
+	at org.springframework.boot.util.LambdaSafe$LambdaSafeCallback.invoke(LambdaSafe.java:159)
+	at org.springframework.boot.util.LambdaSafe$Callbacks.lambda$invoke$1(LambdaSafe.java:286)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1080)
+	at org.springframework.boot.util.LambdaSafe$Callbacks.invoke(LambdaSafe.java:286)
+	at org.springframework.boot.web.server.WebServerFactoryCustomizerBeanPostProcessor.postProcessBeforeInitialization(WebServerFactoryCustomizerBeanPostProcessor.java:72)
+	at org.springframework.boot.web.server.WebServerFactoryCustomizerBeanPostProcessor.postProcessBeforeInitialization(WebServerFactoryCustomizerBeanPostProcessor.java:58)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 16 common frames omitted
+[33m14:16:54.400[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+[33m14:16:54.433[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Finished Spring Data repository scanning in 26ms. Found 0 MongoDB repository interfaces.
+[33m14:16:54.813[0;39m [34m[main][0;39m [31m[WARN ][0;39m [35m[o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext][0;39m-Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: ContextPath must start with '/' and not end with '/'
+[33m14:16:54.821[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.a.l.ConditionEvaluationReportLoggingListener][0;39m-
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[33m14:16:54.830[0;39m [34m[main][0;39m [1;31m[ERROR][0;39m [35m[o.s.boot.SpringApplication][0;39m-Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: ContextPath must start with '/' and not end with '/'
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:156)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.bcloud.server.ServerApplication.main(ServerApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: ContextPath must start with '/' and not end with '/'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:210)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:179)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)
+	... 8 common frames omitted
+Caused by: java.lang.IllegalArgumentException: ContextPath must start with '/' and not end with '/'
+	at org.springframework.boot.web.servlet.server.AbstractServletWebServerFactory.checkContextPath(AbstractServletWebServerFactory.java:133)
+	at org.springframework.boot.web.servlet.server.AbstractServletWebServerFactory.setContextPath(AbstractServletWebServerFactory.java:122)
+	at org.springframework.boot.context.properties.PropertyMapper$Source.to(PropertyMapper.java:316)
+	at org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryCustomizer.customize(ServletWebServerFactoryCustomizer.java:54)
+	at org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryCustomizer.customize(ServletWebServerFactoryCustomizer.java:35)
+	at org.springframework.boot.web.server.WebServerFactoryCustomizerBeanPostProcessor.lambda$postProcessBeforeInitialization$0(WebServerFactoryCustomizerBeanPostProcessor.java:72)
+	at org.springframework.boot.util.LambdaSafe$Callbacks.lambda$null$0(LambdaSafe.java:287)
+	at org.springframework.boot.util.LambdaSafe$LambdaSafeCallback.invoke(LambdaSafe.java:159)
+	at org.springframework.boot.util.LambdaSafe$Callbacks.lambda$invoke$1(LambdaSafe.java:286)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1080)
+	at org.springframework.boot.util.LambdaSafe$Callbacks.invoke(LambdaSafe.java:286)
+	at org.springframework.boot.web.server.WebServerFactoryCustomizerBeanPostProcessor.postProcessBeforeInitialization(WebServerFactoryCustomizerBeanPostProcessor.java:72)
+	at org.springframework.boot.web.server.WebServerFactoryCustomizerBeanPostProcessor.postProcessBeforeInitialization(WebServerFactoryCustomizerBeanPostProcessor.java:58)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 16 common frames omitted
+[33m14:23:15.742[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+[33m14:23:15.783[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.d.r.c.RepositoryConfigurationDelegate][0;39m-Finished Spring Data repository scanning in 34ms. Found 0 MongoDB repository interfaces.
+[33m14:23:16.307[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.w.e.tomcat.TomcatWebServer][0;39m-Tomcat initialized with port(s): 8888 (http)
+[33m14:23:16.318[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.coyote.http11.Http11NioProtocol][0;39m-Initializing ProtocolHandler ["http-nio-8888"]
+[33m14:23:16.318[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.catalina.core.StandardService][0;39m-Starting service [Tomcat]
+[33m14:23:16.319[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.catalina.core.StandardEngine][0;39m-Starting Servlet engine: [Apache Tomcat/9.0.31]
+[33m14:23:16.402[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.c.c.C.[.[localhost].[/bcloud]][0;39m-Initializing Spring embedded WebApplicationContext
+[33m14:23:16.402[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.web.context.ContextLoader][0;39m-Root WebApplicationContext: initialization completed in 1348 ms
+[33m14:23:16.760[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.s.c.ThreadPoolTaskExecutor][0;39m-Initializing ExecutorService 'applicationTaskExecutor'
+[33m14:23:17.039[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.a.coyote.http11.Http11NioProtocol][0;39m-Starting ProtocolHandler ["http-nio-8888"]
+[33m14:23:17.081[0;39m [34m[main][0;39m [34m[INFO ][0;39m [35m[o.s.b.w.e.tomcat.TomcatWebServer][0;39m-Tomcat started on port(s): 8888 (http) with context path '/bcloud'
+[33m14:24:25.871[0;39m [34m[http-nio-8888-exec-2][0;39m [34m[INFO ][0;39m [35m[o.a.c.c.C.[.[localhost].[/bcloud]][0;39m-Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33m14:24:25.872[0;39m [34m[http-nio-8888-exec-2][0;39m [34m[INFO ][0;39m [35m[o.s.web.servlet.DispatcherServlet][0;39m-Initializing Servlet 'dispatcherServlet'
+[33m14:24:25.882[0;39m [34m[http-nio-8888-exec-2][0;39m [34m[INFO ][0;39m [35m[o.s.web.servlet.DispatcherServlet][0;39m-Completed initialization in 10 ms
+[33m14:24:56.541[0;39m [34m[SpringContextShutdownHook][0;39m [34m[INFO ][0;39m [35m[o.s.s.c.ThreadPoolTaskExecutor][0;39m-Shutting down ExecutorService 'applicationTaskExecutor'

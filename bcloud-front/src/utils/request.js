@@ -49,7 +49,11 @@ service.interceptors.request.use(config => {
 
 // response interceptor
 service.interceptors.response.use((response) => {
-  return response.data
+  const respData = response.data
+  if (respData.code) {
+    return Promise.reject(respData.msg)
+  }
+  return respData.data
 }, err)
 
 const installer = {

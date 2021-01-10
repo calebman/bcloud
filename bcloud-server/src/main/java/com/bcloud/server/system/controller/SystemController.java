@@ -8,6 +8,7 @@ import com.bcloud.server.system.in.UserRegisterDTO;
 import com.bcloud.server.system.service.ISystemService;
 import com.bcloud.server.system.service.IUserService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,7 +84,7 @@ public class SystemController {
      */
     @PostMapping("logout")
     @Operation(summary = "用户登出")
-    public void logout(SessionUser user) {
+    public void logout(@Parameter(hidden = true) SessionUser user) {
         systemService.logout(user);
     }
 }

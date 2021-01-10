@@ -5,7 +5,9 @@ import com.bcloud.server.common.security.SessionUser;
 import com.bcloud.server.system.in.UserLoginDTO;
 import com.bcloud.server.system.in.UserRegisterDTO;
 import com.bcloud.server.system.service.IUserService;
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +35,7 @@ public class UserController {
      */
     @GetMapping("me")
     @Operation(summary = "获取当前登录的用户信息")
-    public BaseBody<SessionUser> getCurrentUser(SessionUser user) {
+    public BaseBody<SessionUser> getCurrentUser(@Parameter(hidden = true) SessionUser user) {
         return BaseBody.buildSuccess(user);
     }
 }

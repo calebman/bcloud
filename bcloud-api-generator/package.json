@@ -1,0 +1,14 @@
+{
+  "name": "api-generator",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve"
+  },
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "js-beautify": "^1.11.0",
+    "lodash": "^4.17.15",
+    "swagger-client": "^3.10.0"
+  }
+}

@@ -1,0 +1,54 @@
+
+/**
+ * @description <%= title %>
+ <% if (hasRequestPrams) { %>* @param {RequestParamsDef} params <% } %>
+ <% if (hasRequestBody) { %>* @param {RequestBodyDef} data <% } %>
+ <% if (hasResponseData) { %>* @returns {ResponseDef} 响应体<% } %>
+ */
+function <%= methodName %>(<% if (hasRequestPrams) { %>params<% } %><% if (hasRequestPrams && hasRequestBody) { %>, <% } %><% if (hasRequestBody) { %>data<% } %>) {
+  return request({
+    url: `<%= uri %>`,
+    method: '<%= httpMethod %>',
+    <% if (hasRequestPrams) { %>
+    parameters: params,
+    <% } -%>
+    <% if (hasRequestBody) { %>
+    data: data
+    <% } -%>
+  })
+}
+
+<% if (hasRequestPrams) { %>
+/**
+ * 放至url中的请求参数体定义
+ */
+class RequestParamsDef {
+ constructor() {
+   return <%- requestParamsDef %>
+ }
+}
+<% } %>
+
+<% if (hasRequestBody) { %>
+/**
+ * 放至body中的请求参数体定义
+ */
+class RequestBodyDef {
+    constructor() {
+        return <%- requestBodyDef %>
+    }
+}
+<% } %>
+
+<% if (hasResponseData) { %>
+/**
+ * 请求响应体定义
+ */
+class ResponseDef {
+    constructor() {
+        return <%- responseDef %>
+    }
+}
+<% } %>
+
+module.exports = <%= methodName %>

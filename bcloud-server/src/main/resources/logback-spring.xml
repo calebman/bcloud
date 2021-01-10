@@ -26,8 +26,8 @@
     <!--log文件生成目录-->
     <property name="logdir" value="logs"/>
     <!--application.yml 传递参数 -->
-    <!--log文件生成目录-->
-<!--    <springProperty scope="context" name="logdir" source="logback.logdir"/>-->
+    <!--应用环境，默认dev环境-->
+   <springProperty scope="context" name="env" source="spring.profiles.active" defaultValue="dev"/>
 
     <!--输出到控制台 ConsoleAppender-->
     <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
@@ -45,11 +45,11 @@
             如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天
             的日志改名为今天的日期。即，<File> 的日志都是当天的。
         -->
-        <File>${logdir}/server.log</File>
+        <File>${logdir}/${env}/server.log</File>
         <!--滚动策略，按照时间滚动 TimeBasedRollingPolicy-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间-->
-            <FileNamePattern>${logdir}/server-%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>${logdir}/${env}/server-%d{yyyy-MM-dd}.log</FileNamePattern>
             <maxHistory>${maxdays}</maxHistory>
             <totalSizeCap>${maxsize}</totalSizeCap>
         </rollingPolicy>
@@ -60,7 +60,7 @@
         </encoder>
     </appender>
 
-    <!-- 开发环境-->
+    <!-- 开发环境 -->
     <springProfile name="dev">
         <root level="INFO">
             <appender-ref ref="consoleLog"/>
@@ -74,23 +74,23 @@
         </logger>
     </springProfile>
 
-    <!-- 演示（测试）环境-->
-    <springProfile name="test">
-        <root level="INFO">
-            <appender-ref ref="consoleLog"/>
-            <appender-ref ref="fileLog"/>
-        </root>
-        <logger name="${basepackage}" level="DEBUG" additivity="false">
-            <appender-ref ref="consoleLog"/>
-        </logger>
-    </springProfile>
-
     <!-- 生产环境 -->
     <springProfile name="prod">
         <root level="WARN">
             <appender-ref ref="fileLog"/>
         </root>
         <logger name="${basepackage}" level="INFO" additivity="false">
+            <appender-ref ref="consoleLog"/>
+        </logger>
+    </springProfile>
+
+    <!-- 演示（测试）环境 -->
+    <springProfile name="test">
+        <root level="INFO">
+            <appender-ref ref="consoleLog"/>
+            <appender-ref ref="fileLog"/>
+        </root>
+        <logger name="${basepackage}" level="DEBUG" additivity="false">
             <appender-ref ref="consoleLog"/>
         </logger>
     </springProfile>

@@ -338,7 +338,7 @@ export const constantRouterMap = [
   {
     path: '/init',
     name: 'init',
-    component: () => import(/* webpackChunkName: "init" */ '@/views/init/InitSystem'),
+    component: () => import(/* webpackChunkName: "init" */ '@/views/init/Test'),
     hidden: true,
     meta: { title: '初始化后端云' }
   },
