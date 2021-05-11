@@ -8,7 +8,7 @@
   "dependencies": {
     "ejs": "^3.0.2",
     "js-beautify": "^1.11.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "swagger-client": "^3.10.0"
   }
 }
