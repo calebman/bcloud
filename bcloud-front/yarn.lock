@@ -7451,10 +7451,10 @@ mockjs2@1.0.8:
   dependencies:
     commander "*"
 
-moment@^2.21.0, moment@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+moment@^2.21.0, moment@^2.29.2:
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.2.tgz#00910c60b20843bcba52d37d58c628b47b1f20e4"
+  integrity sha512-UgzG4rvxYpN15jgCmVJwac49h9ly9NurikMWGPdVxm8GZD6XjkKPxDTjQQ43gtGgnV3X0cAyWDdP2Wexoquifg==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -10936,11 +10936,6 @@ vue-jest@^3.0.5:
     source-map "^0.5.6"
     tsconfig "^7.0.0"
     vue-template-es2015-compiler "^1.6.0"
-
-vue-json-pretty@^1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/vue-json-pretty/-/vue-json-pretty-1.6.3.tgz#c7f378f3c9f68977047de28197735bc2cf81b15b"
-  integrity sha512-dgb04fT9PMndfCI4RiQcqaV5P0hSg97LObm15Mkzjl2hL+qWJd833tOd2RhK/yk8AieZt8eJUac5NTZb31O6Mg==
 
 vue-loader@^15.7.0:
   version "15.7.0"
